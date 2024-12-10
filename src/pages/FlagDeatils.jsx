@@ -16,11 +16,11 @@ function FlagDetails() {
     }, [id]);
 
     return (
-        <div className="container w-full pb-20 dark:text-white">
+        <div className="container dark:text-white">
             <div className="text-start">
                 <Link
                     to="/"
-                    className=" p-3 w-[100px] rounded-md bg-black text-white gap-3 dark:hover:dark:bg-[#2B3844] flex mb-[80px] dark:bg-black dark:text-white"
+                    className=" p-3 w-[120px] rounded-md bg-black text-white gap-3 dark:hover:dark:bg-[#2B3844] flex mb-[80px] dark:bg-black dark:text-white"
                 >
                     <img src={img1} alt="image" width={25} height={25} />
                     Back
@@ -33,8 +33,8 @@ function FlagDetails() {
                             <div className="">
                                 <img className="rounded-md"
                                     src={data.flag}
-                                    width={450}
-                                    height={450}
+                                    width={400}
+                                    height={400}
                                     alt={data.country}
                                 />
                             </div>

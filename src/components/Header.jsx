@@ -15,7 +15,7 @@ function Header() {
         }
     }
     return (
-        <div className="signPage bg-[#2B3844] p-3 text-end gap-2">
+        <div className="signPage overflow-x-hidden bg-[#2B3844] text-end gap-2">
             <div className="container flex justify-end gap-5 text-white ">
                 <div
                     onClick={handleNav}

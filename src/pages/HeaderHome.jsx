@@ -17,7 +17,7 @@ function HeaderHome() {
     }
     return (
         <div>
-            <div className="shadow header mb-[50px] text-black home dark:text-white dark:bg-[#2B3844]">
+            <div className="shadow header mb-20  text-black home dark:text-white dark:bg-[#2B3844]">
                 <div className="container mb-[48px] flex justify-between p-[23px] head-container bg-white dark:bg-[#2B3844] ">
                     <div className="text-[#111517] text-[24px] font-[800] dark:text-white">
                         Where in the world?
