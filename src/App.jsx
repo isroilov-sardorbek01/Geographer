@@ -39,18 +39,9 @@ function App() {
         [theme]
     );
     function PrivateRoute({ isAuth, children }) {
-        const [loading, setLoading] = useState(false);
-        useEffect(() => {
-            if (!token) {
-                navigate('/login')
-            }else{
-                setLoading(true)
-            }
-            if(loading){
-                return <div>LOADING...</div>
-            }
-        }, [navigate]);
-
+        if (!isAuth) {
+            navigate("/login");
+        }
         return children;
     }
     return (

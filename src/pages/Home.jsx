@@ -28,7 +28,7 @@ function Home() {
         }
     }
     return (
-        <div className="all dark:bg-[#202C36] dark:text-white">
+        <div className="all dark:bg-[#202C36] dark:text-white ">
             <div className="signPage bg-[#2B3844] p-3 text-end gap-2">
                 <div className="container flex justify-end gap-5 text-white ">
                     <div
