@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import AuthLayout from "./layouts/AuthLayout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import FlagDeatils from "./pages/FlagDeatils";
 export const ThemeContext = createContext(null);
 
 function App() {
@@ -45,7 +46,7 @@ function App() {
         return children;
     }
     return (
-        <div>
+        <div className="dark:bg-[#202C36] bg-whiet w-[100vw]">
             <ThemeContext.Provider value={{ theme, setTheme }}>
                 <Routes>
                     <Route
@@ -54,6 +55,16 @@ function App() {
                             <PrivateRoute isAuth={!!token}>
                                 <MainLayouts>
                                     <Home></Home>
+                                </MainLayouts>
+                            </PrivateRoute>
+                        }
+                    ></Route>
+                    <Route
+                        path="/flag/:id"
+                        element={
+                            <PrivateRoute isAuth={!!token}>
+                                <MainLayouts>
+                                    <FlagDeatils></FlagDeatils>
                                 </MainLayouts>
                             </PrivateRoute>
                         }

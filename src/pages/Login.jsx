@@ -4,7 +4,6 @@ import hide from "../images/hide.svg";
 import show from "../images/show.svg";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { use } from "react";
 
 function Register() {
     const [username, setusername] = useState("");
@@ -47,6 +46,7 @@ function Register() {
                 console.log(response);
 
                 if (response.status == 200) {
+                   
                     localStorage.setItem("user", response.data);
                     localStorage.setItem("token", response.data.accessToken);
                     navigate("/", {
@@ -122,7 +122,7 @@ function Register() {
                     </button>
                 </div>
             </div>
-        </div>
+e        </div>
     );
 }
 

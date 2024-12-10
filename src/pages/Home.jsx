@@ -1,70 +1,27 @@
 import React, { useEffect } from "react";
-import { ThemeContext } from "../App";
-import { useContext } from "react";
-import darkImg from "../images/darkImg1.svg";
-import lightImg from "../images/LigthImg1.svg";
-import { Link, useFetcher, useLocation, useNavigate } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 import countries from "../countries.json";
-import quit from "../images/quitImg.svg";
 
 function Home() {
-    const { theme, setTheme } = useContext(ThemeContext);
     const navigate = useNavigate();
 
-    function handleChangeTheme(e) {
-        e.preventDefault();
-        if (theme === "light") {
-            setTheme("dark");
-        } else {
-            setTheme("light");
-        }
-    }
-    function handleNav(e) {
-        e.preventDefault();
-        const con = confirm("Are you sure , you want to quit?");
-        if (con) {
-            navigate("/login");
-            localStorage.clear();
-        }
+   
+
+    function handleOpenCard(id) {
+        navigate(`/flag/${id}`);
     }
     return (
         <div className="all dark:bg-[#202C36] dark:text-white ">
-            <div className="signPage bg-[#2B3844] p-3 text-end gap-2">
-                <div className="container flex justify-end gap-5 text-white ">
-                    <div
-                        onClick={handleNav}
-                        className="flex gap-3 cursor-pointer hover:underline"
-                    >
-                        Quit
-                        <img src={quit} width={30} height={30} alt="img" />
-                    </div>
-                </div>
-            </div>
-            <div className="shadow header mb-[50px] text-black home dark:text-white dark:bg-[#2B3844]">
-                <div className="container mb-[48px] flex justify-between p-[23px] head-container bg-white dark:bg-[#2B3844] ">
-                    <div className="text-[#111517] text-[24px] font-[800] dark:text-white">
-                        Where in the world?
-                    </div>
-                    <div className="flex items-center gap-3 sameHeader">
-                        <img
-                            onClick={handleChangeTheme}
-                            className="cursor-pointer"
-                            src={theme === "light" ? darkImg : lightImg}
-                            width={30}
-                            height={30}
-                            alt="img"
-                        />
-                        <div className="">
-                            {theme === "light" ? "Dark mode " : "Light mode"}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <div className="container flex flex-wrap justify-between cards gap-[40px] mb-[500px]">
                 {countries.length > 0 &&
                     countries.map((data, index) => {
                         return (
                             <div
+                                onClick={() => {
+                                    handleOpenCard(data.id);
+                                }}
                                 className="card cursor-pointer hover:shadow-2xl transition-shadow w-[264px]  rounded-[5px] shadow-lg bg-white dark:bg-[#2B3844]"
                                 key={index}
                             >
