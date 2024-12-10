@@ -14,7 +14,7 @@ function Home() {
     return (
         <div className="all dark:bg-[#202C36] dark:text-white ">
             
-            <div className="container flex flex-wrap justify-between cards gap-[40px] mb-[500px]">
+            <div className="container flex flex-wrap justify-between cards gap-[40px] pb-20">
                 {countries.length > 0 &&
                     countries.map((data, index) => {
                         return (
