@@ -31,7 +31,7 @@ function FlagDetails() {
                     country.map((data, index) => (
                         <div className="flex items-center justify-between" key={index}>
                             <div className="">
-                                <img
+                                <img className="rounded-md"
                                     src={data.flag}
                                     width={450}
                                     height={450}
